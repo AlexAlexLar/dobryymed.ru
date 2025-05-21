@@ -8,20 +8,20 @@
   <!-- SEO -->
   <meta name="description" content="Пчелиная пыльца — мощный природный источник витаминов, ферментов и антиоксидантов. Узнайте, как она влияет на здоровье, как её принимать и хранить." />
   <meta name="keywords" content="пчелиная пыльца, обножка, как принимать, польза, состав, противопоказания" />
-  <link rel="canonical" href="https://добрыймёд.com/articles/pchelinaya_pylca.html" />
+  <link rel="canonical" href="https://dobryymed.ru/vse_o_pylce.html" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Пчелиная пыльца – Добрый Мёд" />
   <meta property="og:description" content="Как пчелиная пыльца укрепляет здоровье, кому полезна и как её правильно употреблять." />
-  <meta property="og:image" content="https://добрыймёд.com/images/articles/pylca/pollen1.jpg" />
-  <meta property="og:url" content="https://добрыймёд.com/articles/pchelinaya_pylca.html" />
+  <meta property="og:image" content="https://dobryymed.ru/images/articles/pylca/pollen1.jpg" />
+  <meta property="og:url" content="https://dobryymed.ru/vse_o_pylce.html" />
   <meta property="og:type" content="article" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Пчелиная пыльца – Добрый Мёд" />
   <meta name="twitter:description" content="Уникальные свойства, состав и рекомендации по приёму пчелиной пыльцы." />
-  <meta name="twitter:image" content="https://добрыймёд.com/images/articles/pylca/pollen1.jpg" />
+  <meta name="twitter:image" content="https://dobryymed.ru/images/articles/pylca/pollen1.jpg" />
 
   <link rel="stylesheet" href="/style.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -57,16 +57,14 @@
   </style>
 </head>
 <body itemscope itemtype="https://schema.org/Article">
-
   <div id="header-placeholder"></div>
 
   <section class="article-container" data-aos="fade-up">
     <h1 itemprop="headline">Пчелиная пыльца: что это и как она укрепляет здоровье?</h1>
-
     <meta itemprop="author" content="Семейная пасека Добрый Мёд" />
     <meta itemprop="datePublished" content="2024-06-01" />
     <meta itemprop="dateModified" content="2024-06-01" />
-    <meta itemprop="mainEntityOfPage" content="https://добрыймёд.com/articles/pchelinaya_pylca.html" />
+    <meta itemprop="mainEntityOfPage" content="https://dobryymed.ru/vse_o_pylce.html" />
 
     <img src="/images/articles/pylca/pollen1.jpg" alt="Пчелиная пыльца" itemprop="image">
 
@@ -126,18 +124,64 @@
     </div>
   </section>
 
-  <div id="article-footer-placeholder"></div>
+  <div class="article-footer" data-aos="fade-up">
+    <hr style="margin: 40px auto; width: 80%;" />
+
+    <div class="share-buttons">
+      <h3>Поделиться статьёй:</h3>
+      <a href="#" id="vkShare" target="_blank">ВКонтакте</a>
+      <a href="#" id="tgShare" target="_blank">Telegram</a>
+      <a href="#" id="waShare" target="_blank">WhatsApp</a>
+    </div>
+
+    <div class="more-articles">
+      <h3>Читать также:</h3>
+      <ul>
+        <li><a href="/articles/pchelinaya_pylca.html">Пчелиная пыльца</a></li>
+        <li><a href="/vse_o_pylce.html">Всё о пыльце</a></li>
+        <li><a href="/vse_dlya_meda.html">Всё о мёде</a></li>
+      </ul>
+    </div>
+
+    <section class="telegram-comments" style="margin-top: 60px;">
+      <h3>Комментарии через Telegram</h3>
+      <div id="telegram-comments"></div>
+    </section>
+  </div>
+
   <div id="footer-placeholder"></div>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script type="module">
-    import { updateCartBadge } from '/js/cart-utils.js';
+  <script>
+    AOS.init({ duration: 800 });
+
+    const currentURL = "https://dobryymed.ru/vse_o_pylce.html";
+
+    document.getElementById('vkShare')?.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.open(`https://vk.com/share.php?url=${encodeURIComponent(currentURL)}`, '_blank');
+    });
+    document.getElementById('tgShare')?.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.open(`https://t.me/share/url?url=${encodeURIComponent(currentURL)}`, '_blank');
+    });
+    document.getElementById('waShare')?.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(currentURL)}`, '_blank');
+    });
+
+    const commentsContainer = document.getElementById('telegram-comments');
+    if (commentsContainer) {
+      const script = document.createElement('script');
+      script.src = "https://comments.app/js/widget.js?3&limit=10&color=F9C74F&channel=dobrymed_comments&url=https://dobryymed.ru/vse_o_pylce.html";
+      script.async = true;
+      commentsContainer.appendChild(script);
+    }
 
     fetch('/components/header.html')
       .then(res => res.text())
       .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
-        updateCartBadge();
       });
 
     fetch('/components/footer.html')
@@ -145,42 +189,41 @@
       .then(data => {
         document.getElementById('footer-placeholder').innerHTML = data;
       });
-
-    AOS.init({ duration: 800 });
   </script>
 
-  <script>
-    const currentURL = window.location.origin + window.location.pathname;
-
-    fetch('/components/article-footer.html')
-      .then(res => res.text())
-      .then(html => {
-        const container = document.getElementById('article-footer-placeholder');
-        container.innerHTML = html;
-
-        // Кнопки "Поделиться"
-        document.getElementById('vkShare')?.addEventListener('click', function (e) {
-          e.preventDefault();
-          window.open(`https://vk.com/share.php?url=${encodeURIComponent(currentURL)}`, '_blank');
-        });
-        document.getElementById('tgShare')?.addEventListener('click', function (e) {
-          e.preventDefault();
-          window.open(`https://t.me/share/url?url=${encodeURIComponent(currentURL)}`, '_blank');
-        });
-        document.getElementById('waShare')?.addEventListener('click', function (e) {
-          e.preventDefault();
-          window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(currentURL)}`, '_blank');
-        });
-
-        // Комментарии Telegram
-        const commentsContainer = container.querySelector('#telegram-comments');
-        if (commentsContainer) {
-          const script = document.createElement('script');
-          script.src = `https://comments.app/js/widget.js?3&limit=10&color=F9C74F&channel=dobrymed_comments&url=${encodeURIComponent(currentURL)}`;
-          script.async = true;
-          document.body.appendChild(script);
-        }
-      });
-  </script>
+  <style>
+    .article-footer {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .share-buttons a {
+      display: inline-block;
+      margin: 10px;
+      background: #d4a373;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .share-buttons a:hover {
+      background: #b57e50;
+    }
+    .more-articles ul {
+      list-style: none;
+      padding: 0;
+    }
+    .more-articles li {
+      margin: 10px 0;
+    }
+    .more-articles a {
+      color: #5a3e1b;
+      text-decoration: underline;
+    }
+    .telegram-comments h3 {
+      margin-bottom: 20px;
+      color: #5a3e1b;
+    }
+  </style>
 </body>
 </html>
