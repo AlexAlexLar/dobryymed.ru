@@ -150,30 +150,37 @@
   </script>
 
   <script>
-    fetch('/components/article-footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('article-footer-placeholder').innerHTML = data;
+  const currentURL = window.location.href;
 
-        const currentURL = window.location.href;
+  fetch('/components/article-footer.html')
+    .then(res => res.text())
+    .then(data => {
+      const container = document.getElementById('article-footer-placeholder');
+      container.innerHTML = data;
 
-        const vk = document.getElementById('vkShare');
-        const tg = document.getElementById('tgShare');
-        const wa = document.getElementById('waShare');
-
-        if (vk) vk.addEventListener('click', e => {
-          e.preventDefault();
-          window.open(`https://vk.com/share.php?url=${encodeURIComponent(currentURL)}`, '_blank');
-        });
-        if (tg) tg.addEventListener('click', e => {
-          e.preventDefault();
-          window.open(`https://t.me/share/url?url=${encodeURIComponent(currentURL)}`, '_blank');
-        });
-        if (wa) wa.addEventListener('click', e => {
-          e.preventDefault();
-          window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(currentURL)}`, '_blank');
-        });
+      // Поделиться
+      document.getElementById('vkShare')?.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.open(`https://vk.com/share.php?url=${encodeURIComponent(currentURL)}`, '_blank');
       });
-  </script>
+      document.getElementById('tgShare')?.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.open(`https://t.me/share/url?url=${encodeURIComponent(currentURL)}`, '_blank');
+      });
+      document.getElementById('waShare')?.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(currentURL)}`, '_blank');
+      });
+
+      // Комментарии
+      const commentsContainer = container.querySelector('#telegram-comments');
+      if (commentsContainer) {
+        const script = document.createElement('script');
+        script.src = `https://comments.app/js/widget.js?3&limit=10&color=F9C74F&channel=dobrymed_comments&url=${encodeURIComponent(currentURL)}`;
+        script.async = true;
+        commentsContainer.appendChild(script);
+      }
+    });
+</script>
 </body>
 </html>
