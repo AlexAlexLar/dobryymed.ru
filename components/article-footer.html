@@ -19,11 +19,7 @@
 
   <section class="telegram-comments" style="margin-top: 60px;">
     <h3>Комментарии через Telegram</h3>
-    <div id="telegram-comments">
-      <script async 
-        src="https://comments.app/js/widget.js?3&limit=10&color=F9C74F&channel=dobrymed_comments&comments_url=https%3A%2F%2Fдобрыймёд.com%2Farticles%2Fpchelinaya_pylca.html">
-      </script>
-    </div>
+    <div id="telegram-comments"></div>
   </section>
 </div>
 
@@ -31,22 +27,28 @@
   document.addEventListener('DOMContentLoaded', function () {
     const currentURL = window.location.href;
 
-    const vk = document.getElementById('vkShare');
-    const tg = document.getElementById('tgShare');
-    const wa = document.getElementById('waShare');
-
-    if (vk) vk.addEventListener('click', e => {
+    // Поделиться
+    document.getElementById('vkShare')?.addEventListener('click', function (e) {
       e.preventDefault();
       window.open(`https://vk.com/share.php?url=${encodeURIComponent(currentURL)}`, '_blank');
     });
-    if (tg) tg.addEventListener('click', e => {
+    document.getElementById('tgShare')?.addEventListener('click', function (e) {
       e.preventDefault();
       window.open(`https://t.me/share/url?url=${encodeURIComponent(currentURL)}`, '_blank');
     });
-    if (wa) wa.addEventListener('click', e => {
+    document.getElementById('waShare')?.addEventListener('click', function (e) {
       e.preventDefault();
       window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(currentURL)}`, '_blank');
     });
+
+    // Комментарии Telegram
+    const commentsContainer = document.getElementById('telegram-comments');
+    if (commentsContainer) {
+      const script = document.createElement('script');
+      script.src = `https://comments.app/js/widget.js?3&limit=10&color=F9C74F&channel=dobrymed_comments&url=${encodeURIComponent(currentURL)}`;
+      script.async = true;
+      commentsContainer.appendChild(script);
+    }
   });
 </script>
 
