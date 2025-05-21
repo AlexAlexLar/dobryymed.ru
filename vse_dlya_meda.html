@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Всё о мёде – Семейная пасека «Добрый Мёд»</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Полезные статьи о мёде: как выбрать натуральный продукт, влияние пчёл на экологию, советы от семейной пасеки Ларионовых." />
+  <meta name="keywords" content="всё о мёде, натуральный мёд, статьи, советы, пчёлы, экология, качество мёда" />
+  <link rel="canonical" href="https://добрыймёд.com/vse_dlya_meda.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Всё о мёде – Семейная пасека «Добрый Мёд»" />
+  <meta property="og:description" content="Узнайте, как отличить натуральный мёд, чем он полезен и почему пчёлы важны для природы." />
+  <meta property="og:image" content="https://добрыймёд.com/images/articles/honey-cover.jpg" />
+  <meta property="og:url" content="https://добрыймёд.com/vse_dlya_meda.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Всё о мёде – Семейная пасека «Добрый Мёд»" />
+  <meta name="twitter:description" content="Как выбрать качественный мёд, зачем сохранять пчёл и другие советы от пчеловодов." />
+  <meta name="twitter:image" content="https://добрыймёд.com/images/articles/honey-cover.jpg" />
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+  <link rel="manifest" href="/images/icons/site.webmanifest">
+  <link rel="shortcut icon" href="/images/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#f9c74f">
+  <meta name="theme-color" content="#f9c74f">
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    .articles-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 0;
+    }
+    .articles-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #5a3e1b;
+    }
+    .article-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      max-width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-link:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    .article-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      border: 2px solid #d4a373;
+      text-align: center;
+    }
+    .article-card h3 {
+      margin-top: 10px;
+      color: #5a3e1b;
+      font-size: 20px;
+    }
+    .article-card p {
+      font-size: 16px;
+      color: #333;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <section class="articles-container" itemscope itemtype="https://schema.org/ItemList">
+    <h1 itemprop="name">Всё о мёде: полезные статьи</h1>
+
+<div class="filter-bar">
+  <input type="text" id="search" placeholder="Поиск по названию...">
+  <select id="categoryFilter">
+    <option value="">Все темы</option>
+    <option value="Польза">Польза</option>
+    <option value="Экология">Экология</option>
+    <option value="Советы">Советы</option>
+  </select>
+</div>
+
+<div class="article-grid" id="articleGrid">
+
+  <a href="#" class="card-link" data-name="Как выбрать натуральный мёд?" data-category="Советы" itemscope itemtype="https://schema.org/Article" data-aos="fade-up">
+    <div class="article-card">
+      <h3 itemprop="headline">Как выбрать натуральный мёд?</h3>
+      <p itemprop="description">Не весь мёд на рынке одинаково полезен. Советы, как определить качество продукта.</p>
+    </div>
+  </a>
+
+  <a href="#" class="card-link" data-name="Как хранить мёд правильно?" data-category="Советы" itemscope itemtype="https://schema.org/Article" data-aos="fade-up">
+    <div class="article-card">
+      <h3 itemprop="headline">Как хранить мёд правильно?</h3>
+      <p itemprop="description">Температурный режим, тара, срок хранения — как сохранить полезные свойства мёда.</p>
+    </div>
+  </a>
+
+  <a href="#" class="card-link" data-name="Пчёлы и экология" data-category="Экология" itemscope itemtype="https://schema.org/Article" data-aos="fade-up">
+    <div class="article-card">
+      <h3 itemprop="headline">Пчёлы и экология: важность опылителей</h3>
+      <p itemprop="description">Как пчёлы влияют на природу и почему их сохранение критично для экосистемы.</p>
+    </div>
+  </a>
+
+</div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script type="module">
+    import { updateCartBadge } from '/js/cart-utils.js';
+
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+        updateCartBadge();
+      });
+
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+
+    AOS.init({ duration: 800 });
+  </script>
+
+</body>
+</html>
