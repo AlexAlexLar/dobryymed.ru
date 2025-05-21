@@ -1,4 +1,3 @@
-<!-- article-footer.html -->
 <div class="article-footer" data-aos="fade-up">
   <hr style="margin: 40px auto; width: 80%;" />
 
@@ -24,6 +23,33 @@
   </section>
 </div>
 
+<script>
+  // Жёстко заданный URL
+  const currentURL = "https://dobryymed.ru/vse_o_pylce.html";
+
+  // Кнопки "Поделиться"
+  document.getElementById('vkShare')?.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.open(`https://vk.com/share.php?url=${encodeURIComponent(currentURL)}`, '_blank');
+  });
+  document.getElementById('tgShare')?.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.open(`https://t.me/share/url?url=${encodeURIComponent(currentURL)}`, '_blank');
+  });
+  document.getElementById('waShare')?.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(currentURL)}`, '_blank');
+  });
+
+  // Telegram comments (жёсткий URL)
+  const commentsContainer = document.getElementById('telegram-comments');
+  if (commentsContainer) {
+    const script = document.createElement('script');
+    script.src = "https://comments.app/js/widget.js?3&limit=10&color=F9C74F&channel=dobrymed_comments&url=https://dobryymed.ru/vse_o_pylce.html";
+    script.async = true;
+    commentsContainer.appendChild(script);
+  }
+</script>
 
 <style>
   .article-footer {
