@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Продукция – Семейная пасека «Добрый Мёд»</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Каталог продукции семейной пасеки Ларионовых – натуральный мёд, перга, прополис, подарочные наборы и тара для мёда. Доставка по всей России." />
+  <meta name="keywords" content="продукция, натуральный мёд, пасека, добрый мёд, подарки, тара, продукты пчеловодства, перга, прополис, медовая продукция, пыльца" />
+  <link rel="canonical" href="https://добрыймёд.com/products.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Продукция – Семейная пасека «Добрый Мёд»" />
+  <meta property="og:description" content="Натуральные продукты с нашей пасеки: мёд, перга, воск, наборы. Качественно, честно, с любовью к делу." />
+  <meta property="og:image" content="https://добрыймёд.com/images/og-image-products.webp" />
+  <meta property="og:url" content="https://добрыймёд.com/products.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Продукция – Семейная пасека «Добрый Мёд»" />
+  <meta name="twitter:description" content="Натуральный мёд и товары с пасеки Ларионовых. Только качество и семейные традиции." />
+  <meta name="twitter:image" content="https://добрыймёд.com/images/og-image-products.webp" />
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+  <link rel="manifest" href="/images/icons/site.webmanifest">
+  <link rel="shortcut icon" href="/images/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#f9c74f">
+  <meta name="theme-color" content="#f9c74f">
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    .filter-bar {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-bar input,
+    .filter-bar select {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #d4a373;
+      border-radius: 5px;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .product-card {
+      max-width: 300px;
+      text-align: center;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .product-card.hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      height: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+    .card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-link:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+    .card-link:hover h3 {
+      text-decoration: underline;
+    }
+    .products-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <section class="products-container" itemscope itemtype="https://schema.org/ItemList">
+     <h1 itemprop="name">Каталог продукции с семейной пасеки Ларионовых</h1>
+
+    <div class="filter-bar">
+      <input type="text" id="search" placeholder="Поиск по названию...">
+      <select id="categoryFilter">
+        <option value="">Все категории</option>
+        <option value="Мёд">Мёд</option>
+        <option value="Пчеловодство">Продукты Пчеловодства</option>
+        <option value="Тара">Тара</option>
+        <option value="Подарки">Подарочные наборы</option>
+      </select>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <a href="honey.html" class="card-link">
+        <div class="product-card" data-name="Мёд" data-category="Мёд" itemscope itemtype="https://schema.org/Product" data-aos="fade-up">
+          <picture>
+            <source srcset="images/products/honey.webp" type="image/webp">
+            <img src="images/products/honey.webp" alt="Натуральный мёд из пасеки Ларионовых" itemprop="image">
+          </picture>
+          <h3 itemprop="name">Мёд</h3>
+          <meta itemprop="category" content="Мёд" />
+          <span>Подробнее</span>
+        </div>
+      </a>
+
+      <a href="#" class="card-link">
+        <div class="product-card" data-name="Продукты Пчеловодства" data-category="Пчеловодство" itemscope itemtype="https://schema.org/Product" data-aos="fade-up">
+          <picture>
+            <source srcset="images/products/beekeeping_products.webp" type="image/webp">
+            <img src="images/products/beekeeping_products.webp" alt="Продукты пчеловодства: перга, прополис, забрус" itemprop="image">
+          </picture>
+          <h3 itemprop="name">Продукты Пчеловодства</h3>
+          <meta itemprop="category" content="Пчеловодство" />
+          <span>Подробнее</span>
+        </div>
+      </a>
+
+      <a href="#" class="card-link">
+        <div class="product-card" data-name="Деревянная тара" data-category="Тара" itemscope itemtype="https://schema.org/Product" data-aos="fade-up">
+          <picture>
+            <source srcset="images/products/wooden_dishes.webp" type="image/webp">
+            <img src="images/products/wooden_dishes.webp" alt="Деревянная тара для хранения мёда ручной работы" itemprop="image">
+          </picture>
+          <h3 itemprop="name">Деревянная тара для мёда</h3>
+          <meta itemprop="category" content="Тара" />
+          <span>Подробнее</span>
+        </div>
+      </a>
+
+      <a href="#" class="card-link">
+        <div class="product-card" data-name="Подарочные наборы" data-category="Подарки" itemscope itemtype="https://schema.org/Product" data-aos="fade-up">
+          <picture>
+            <source srcset="images/products/gift_sets.webp" type="image/webp">
+            <img src="images/products/gift_sets.webp" alt="Подарочные наборы с мёдом и продуктами пчеловодства" itemprop="image">
+          </picture>
+          <h3 itemprop="name">Подарочные наборы</h3>
+          <meta itemprop="category" content="Подарки" />
+          <span>Подробнее</span>
+        </div>
+      </a>
+
+      <a href="#" class="card-link">
+        <div class="product-card" data-name="Тара для мёда" data-category="Тара" itemscope itemtype="https://schema.org/Product" data-aos="fade-up">
+          <picture>
+            <source srcset="images/products/honey_containers.webp" type="image/webp">
+            <img src="images/products/honey_containers.webp" alt="Пластиковая и стеклянная тара для мёда" itemprop="image">
+          </picture>
+          <h3 itemprop="name">Тара для мёда</h3>
+          <meta itemprop="category" content="Тара" />
+          <span>Подробнее</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script type="module">
+    import { updateCartBadge } from '/js/cart-utils.js';
+
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+        updateCartBadge();
+      });
+
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+
+    AOS.init({ duration: 800 });
+
+    const searchInput = document.getElementById('search');
+    const filterSelect = document.getElementById('categoryFilter');
+    const cards = document.querySelectorAll('.product-card');
+
+    function filterCards() {
+      const search = searchInput.value.toLowerCase();
+      const category = filterSelect.value;
+
+      cards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const cat = card.dataset.category;
+        const matchText = name.includes(search);
+        const matchCategory = !category || cat === category;
+        const visible = matchText && matchCategory;
+
+        if (visible) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterCards);
+    filterSelect.addEventListener('change', filterCards);
+  </script>
+</body>
+</html>
