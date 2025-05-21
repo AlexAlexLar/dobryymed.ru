@@ -127,38 +127,38 @@
   </section>
 
   <div id="article-footer-placeholder"></div>
-  <div id="footer-placeholder"></div>
+<div id="footer-placeholder"></div>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script type="module">
-    import { updateCartBadge } from '/js/cart-utils.js';
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script type="module">
+  import { updateCartBadge } from '/js/cart-utils.js';
 
-    fetch('/components/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-        updateCartBadge();
-      });
-
-    fetch('/components/footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      });
-
-    AOS.init({ duration: 800 });
-  </script>
-
-  <script>
-  const currentURL = window.location.href;
-
-  fetch('/components/article-footer.html')
+  fetch('/components/header.html')
     .then(res => res.text())
     .then(data => {
-      const container = document.getElementById('article-footer-placeholder');
-      container.innerHTML = data;
+      document.getElementById('header-placeholder').innerHTML = data;
+      updateCartBadge();
+    });
 
-      // Поделиться
+  fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+
+  AOS.init({ duration: 800 });
+</script>
+
+<script>
+  fetch('/components/article-footer.html')
+    .then(res => res.text())
+    .then(html => {
+      const container = document.getElementById('article-footer-placeholder');
+      container.innerHTML = html;
+
+      const currentURL = window.location.origin + window.location.pathname;
+
+      // Кнопки "Поделиться"
       document.getElementById('vkShare')?.addEventListener('click', function (e) {
         e.preventDefault();
         window.open(`https://vk.com/share.php?url=${encodeURIComponent(currentURL)}`, '_blank');
@@ -172,7 +172,7 @@
         window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(currentURL)}`, '_blank');
       });
 
-      // Комментарии
+      // Комментарии Telegram
       const commentsContainer = container.querySelector('#telegram-comments');
       if (commentsContainer) {
         const script = document.createElement('script');
